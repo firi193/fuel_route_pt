@@ -7,5 +7,5 @@ def fuel_route_view(request):
     if not start or not end:
         return JsonResponse({'error': 'Missing start or end location'}, status=400)
 
-    result = get_route_with_stops(start, end)
+    result = get_route_with_stops(start, end, request)
     return JsonResponse(result)
