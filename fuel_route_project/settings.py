@@ -6,12 +6,17 @@ import dj_database_url
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'fuel_api', 'static')]
 ALLOWED_HOSTS = ['fuel-route-pt.onrender.com', 'localhost', '127.0.0.1']
+WSGI_APPLICATION = 'fuel_route_project.wsgi.application'
 ROOT_URLCONF = 'fuel_route_project.urls'
 INSTALLED_APPS = [
     'django.contrib.admin', 
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
     'django.contrib.sessions',
     'django.contrib.messages',
     'fuel_api',
