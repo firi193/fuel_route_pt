@@ -9,9 +9,10 @@ from geopy.distance import geodesic
 from fuel_api.models import FuelPrice
 import math
 import uuid
+from decouple import config
 
 
-API_KEY = os.getenv('ORS_API_KEY')
+API_KEY = config('ORS_API_KEY')
 if not API_KEY:
     raise ValueError("OpenRouteService API key not found. Set the ORS_API_KEY environment variable.")
 
