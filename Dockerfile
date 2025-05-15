@@ -12,6 +12,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the entire project
 COPY . .
 
+ENV SECRET_KEY=dummy_key_for_build
 # Collect static files after code is in place
 RUN python manage.py collectstatic --noinput
 
