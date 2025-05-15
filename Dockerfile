@@ -18,4 +18,5 @@ RUN ls -la
 
 EXPOSE 8000
 
-CMD ["gunicorn", "fuel_route_project.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "fuel_route_project.wsgi:application", "--bind", "0.0.0.0:8000", "--env", "DJANGO_SETTINGS_MODULE=fuel_route_project.settings"]
+
