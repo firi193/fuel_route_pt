@@ -17,11 +17,11 @@ INSTALLED_APPS = [
     'fuel_api',
 ]
 SECRET_KEY = config("SECRET_KEY")
-DEBUG = False
+DEBUG = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # Add your template directories here if needed
+        'DIRS': [], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
