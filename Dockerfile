@@ -13,6 +13,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 ENV SECRET_KEY=dummy_key_for_build
+ENV DATABASE_URL=sqlite:///db.sqlite3
 # Collect static files after code is in place
 RUN python manage.py collectstatic --noinput
 
