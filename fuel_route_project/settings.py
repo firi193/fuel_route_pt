@@ -6,7 +6,7 @@ import dj_database_url
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ALLOWED_HOSTS = ['fuel-route-pt.onrender.com', 'localhost', '127.0.0.1']
 ROOT_URLCONF = 'fuel_route_project.urls'
 INSTALLED_APPS = [
     'django.contrib.admin', 
