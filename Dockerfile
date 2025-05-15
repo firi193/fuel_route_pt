@@ -1,4 +1,4 @@
-FROM python:3.11.4-slim
+FROM python:3.11-slim
 
 # Don't write .pyc files and flush stdout
 ENV PYTHONDONTWRITEBYTECODE=1
