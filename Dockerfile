@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11.4-slim
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -12,10 +12,9 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the entire project
 COPY . .
 
-ENV SECRET_KEY=dummy_key_for_build
-ENV DATABASE_URL=sqlite:///db.sqlite3
+COPY .env .env
 # Collect static files after code is in place
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 # Run the app
 CMD ["gunicorn", "fuel_route_project.wsgi:application", "--bind", "0.0.0.0:8000"]
